@@ -1,17 +1,22 @@
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import CartWidget from './components/CartWidget'
 import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from "./components/ItemDetailContainer"
 import NavBar from './components/NavBar'
-import {useState} from "react";
 
 function App() {
 
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar brand="OnTech" />
-      <ItemListContainer gratting="¡Lo mejor en tecnología para tu pc!"/>
-    </div>
+      <Routes>
+        <Route exact path='/' element={<ItemListContainer/>}/>
+        <Route
+            exact  path="/categoria/:categoria"  element={<ItemListContainer />}/>
+        <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
+      </Routes>
+    </BrowserRouter>
+    
   )
 }
 

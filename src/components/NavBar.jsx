@@ -1,25 +1,39 @@
 import React from 'react'
 import logo from "../assets/logo-gradiente-tecnologia_52683-8564.png";
-import { Flex, Img, Spacer , Box } from '@chakra-ui/react'
+import { Flex, Img} from '@chakra-ui/react'
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = ({brand}) => {
     
   return  (
     <Flex className='navBar'>
-        <Box className='div-navBar'>
-            <Img className='logo' src={logo} alt="" />
+      <div className='div-navBar'>
+        <Img className='logo' src={logo} alt="" />
+        <Link to="/">
             <p className='brand'><b>{brand}</b></p>
-        </Box>
+        </Link>
+      </div>
         <div className='div-menu' >
-            <a className='link' href="">PROCESADORES</a>
-            <a className='link' href="">GRAFICA</a>
-            <a className='link' href="">MEMORIA</a>
-            <a className='link' href="">GRAFICA</a>
-            <a className='link' href="">FUENTE</a>
-            <a className='link' href="">MOTHER</a>
-            <a className='link' href="">GABINETE</a>
+          <Link to={`/categoria/${"procesador"}`}>
+            <p className='link'>PROCESADORES</p>
+          </Link>
+          <Link to={`/categoria/${"grafica"}`}>
+            <p className='link'>GRAFICA</p>
+          </Link>
+          <Link to={`/categoria/${"memoria"}`}>
+            <p className='link'>MEMORIA</p>
+          </Link>
+          <Link to={`/categoria/${"fuente"}`}>
+            <p className='link'>FUENTE</p>
+          </Link>
+          <Link to={`/categoria/${"mother"}`}>
+            <p className='link'>MOTHER</p>
+          </Link>
+          <Link to={`/categoria/${"gabinete"}`}>
+            <p className='link'>GABINETE</p>
+          </Link>
         </div>
         <CartWidget/>
     </Flex>

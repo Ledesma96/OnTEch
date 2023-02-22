@@ -1,11 +1,10 @@
-import ItemList from "./ItemList"
+import { useState, useEffect } from 'react'
 import Data from "../data.json"
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import React from 'react'
+import ItemDetail from './ItemDetail'
 
-const ItemListContainer = () => {
-  const {categoria} = useParams();
-  
+
+const ItemDetailContainer = () =>{
   const [productos, setProductos] = useState([]);
 
 
@@ -22,13 +21,11 @@ const ItemListContainer = () => {
      fetchData();
   }, []);
 
-const catFilter = Data.filter((prod) => prod.categoria === categoria)
-
   return (
     <div>
-        {categoria ? <ItemList productos={catFilter} /> : <ItemList productos={Data} />}
+        <ItemDetail productos={Data}/>
     </div>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
