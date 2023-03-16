@@ -1,9 +1,33 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { CartContext } from "../contexts/ShoppingCartContext";
+import { useContext } from 'react'
+import { Button } from '@chakra-ui/react';
 
-const ItemCount = ({stock}) => {
-    const [contador , setContador] = useState(0);
-    console.log(stock)
+
+const ItemCount = ({stock, id, precio, nombre, foto}) => {
+    const [contador , setContador] = useState(1);
+    const [cart, setCart] = useContext(CartContext);
+
+    const addCart = () =>{
+    setCart ((currItem) => {
+      const isItemFound = currItem.find((item) => item.id === id);
+      if (isItemFound){
+        return currItem.map((item)=>{
+          if (item.id === id){
+            return {...item , cantidad: item.cantidad + contador}
+          } else {
+            return item
+          }
+        })
+      } else {
+        return [... currItem, {id, cantidad: contador, precio, nombre, foto}]
+      }
+    })
+  }
+
+ 
+
     
 
     const resta = () =>{
@@ -28,6 +52,8 @@ const ItemCount = ({stock}) => {
         })
       }
     }
+
+  
 
     const suma = () => {
       if (contador < stock){
@@ -62,6 +88,7 @@ const ItemCount = ({stock}) => {
         </div>
         <button className="reset" onClick={() => setContador(0)}>RESET</button>
       </div>
+      <Button className='comprar' colorScheme='blue' onClick={() => addCart()}>agregar al carrito</Button>
     </>
   )
 }

@@ -1,16 +1,32 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount';
-import { Button } from '@chakra-ui/react';
+import { doc, getDoc, getFirestore} from "firebase/firestore";
+import { useState, useEffect } from 'react'
+;
 
 const ItemDetail = ({productos}) => {
+ console.log(productos)
+  const [produuct, setProduuct] = useState([]);
   const { id } = useParams();
+  console.log(id)
 
- 
-  
+  useEffect(() => {
+    const dataBase = getFirestore();
+
+    const item = doc(dataBase, "productos", `${id}`)
+    getDoc(item).then((snapshot)=>{
+      if(snapshot.exists()){
+        setProduuct({
+          ...snapshot.data(),
+          id:snapshot.id
+        })
+      }
+    })
+  }, [])
 
   const idFilter = productos.filter((prod) => prod.id == id);
-  
+  console.log(idFilter)
     return (
       <>
       {idFilter.map((prod)=>(
@@ -47,8 +63,11 @@ const ItemDetail = ({productos}) => {
               </div>
             </div>
             <div className='divButton'>
-              <ItemCount stock= {prod.stock}/>
-              <Button className='comprar' variant='solid' colorScheme='blue'>Agregar al carrito</Button>
+              <ItemCount  stock= {prod.stock}
+                          precio={prod.precio}
+                          nombre={prod.nombre}
+                          id={prod.id}
+                          />
             </div>
           </div>
         </div>

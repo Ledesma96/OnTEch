@@ -5,4 +5,4 @@ se espera que esta app web tenga una correcta navegavilidad y que el usuario pue
 |---|---|---|
 |Gabriel|Ledesma|gabiel.m.ledesma96@gmail.com
 
-![guia-de-proyecto-gift] (./src/assets/Coolcam0222-1950.gif)
+[guia-de-proyecto-gift](./src/assets/Coolcam0222-1950.gif)
