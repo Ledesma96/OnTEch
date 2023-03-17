@@ -14,7 +14,12 @@
    
     const items = collection(dataBase, "productos");
     getDocs(items).then((snapshot) => {
-      const documents = snapshot.docs.map((doc) => doc.data())
+      const documents = snapshot.docs.map((doc) =>{
+        return{
+          id:doc.id,
+          ...doc.data()
+        }
+      })
       setProductos(documents)
       setSpinner(false)
     })

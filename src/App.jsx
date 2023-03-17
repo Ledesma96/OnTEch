@@ -5,6 +5,9 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import NavBar from './components/NavBar'
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
 import Cart from './components/cart'
+import Buy from './components/Buy'
+import Footer from './components/Footer';
+
 
 
 
@@ -19,7 +22,9 @@ function App() {
           <Route exact  path="/categoria/:categoria"  element={<ItemListContainer />}/>
           <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
           <Route exact path="/cart" element={<Cart/>}/>
+          <Route exact path='/buy' element={<Buy/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </ShoppingCartProvider>
     

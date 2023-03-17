@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount';
 import { doc, getDoc, getFirestore} from "firebase/firestore";
 import { useState, useEffect } from 'react'
+import Loading from "./Loading"
 ;
 
 const ItemDetail = ({productos}) => {
  console.log(productos)
   const [produuct, setProduuct] = useState([]);
+  const [spinner, setSpinner] = useState(true)
   const { id } = useParams();
-  console.log(id)
 
   useEffect(() => {
     const dataBase = getFirestore();
@@ -21,9 +22,19 @@ const ItemDetail = ({productos}) => {
           ...snapshot.data(),
           id:snapshot.id
         })
+        setSpinner(false)
       }
     })
   }, [])
+
+  if (spinner){
+    return (
+      <>
+        <Loading/>
+      </>
+    )
+  }
+
 
   const idFilter = productos.filter((prod) => prod.id == id);
   console.log(idFilter)
@@ -67,6 +78,7 @@ const ItemDetail = ({productos}) => {
                           precio={prod.precio}
                           nombre={prod.nombre}
                           id={prod.id}
+                          foto={prod.imagen}
                           />
             </div>
           </div>

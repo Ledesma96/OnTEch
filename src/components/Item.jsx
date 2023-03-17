@@ -4,9 +4,9 @@ import { Link} from 'react-router-dom';
 const Item = ({id,precio,nombre, imagen}) => {
   return (
     <div className='caard' >
-        <Card maxW='sm' key={id}>
+        <Card className='caard' maxW='sm' key={id}>
             <CardBody>
-                <Image src={imagen} alt=''borderRadius='lg'/>
+                <Image className='imagen' src={imagen} alt=''borderRadius='lg'/>
                 <Stack mt='6' spacing='3'>
                 <Heading size='md'></Heading>
                 <h3 className='h3'>

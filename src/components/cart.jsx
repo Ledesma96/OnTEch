@@ -4,7 +4,8 @@ import {
     Alert,
     AlertTitle,
     AlertDescription,
-    AlertIcon
+    AlertIcon,
+    Button
   } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
@@ -49,7 +50,7 @@ import { CartContext } from "../contexts/ShoppingCartContext";
               </div>
           );
         })}
-        {totalCarrito > 0 ? <div className="cart"><h2>Total</h2><h2>${totalCarrito}</h2></div> : 
+        {totalCarrito > 0 ? <div><div className="cart"><h2>Total</h2><h2>${totalCarrito}</h2></div><Link to={`/buy`}><Button colorScheme='blue'>Finalizar compra</Button></Link></div> : 
         <Alert className="vacio" status='error'>
           <AlertIcon />
           <AlertTitle>Error!</AlertTitle>
