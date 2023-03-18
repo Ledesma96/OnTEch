@@ -223,6 +223,7 @@ justify-content: space-evenly;
 .comprar{
   width: 50%;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .divButton{
@@ -284,7 +285,8 @@ justify-content: space-evenly;
 }
 
 .contenedor{
-  margin-top: 5%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   display: flex;
 }
 
@@ -334,6 +336,10 @@ justify-content: space-evenly;
 
 .input{
   margin: 15px;
+}
+
+.codSeg{
+  width: 50%;
 }
 
 .dni{
@@ -399,8 +405,9 @@ justify-content: space-evenly;
 }
 
 .redes{
-  margin-top: 20px;
-  width: 30%;
+  color: white;
+  margin-left: 5%;
+  width: 33%;
   display: flex;
   flex-direction: column;
 }
@@ -410,6 +417,79 @@ justify-content: space-evenly;
   display: flex;
 }
 
+.contenedorFooter{
+  background-color: rgb(0, 132, 255);
+}
+
+.footerDiv{
+  display: flex;
+}
+
 .red{
   margin-left: 10px;
+}
+
+.ayuda{
+  color: white;
+  margin-top: 20px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactanos{
+  margin-top: 5%;
+  width: 30%;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: solid 0.5px white;
+}
+
+.terminos{
+  color: white;
+  margin-top: 20px;
+  margin-right: 5%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items:end ;
+}
+
+.copy{
+  margin-top: 2%;
+  padding: 1%;
+  border-top: solid 0.5px white;
+  color: white;
+}
+
+.notFound{
+  width: 91vw;
+  height: 90vh;
+  background-image: url(../public/imagenes/WhatsApp\ Image\ 2023-03-18\ at\ 09.41.05.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound__error{
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ups{
+  color: red;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.volver{
+  margin-top: 15px;
 }

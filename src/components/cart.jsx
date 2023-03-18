@@ -20,7 +20,6 @@ import { CartContext } from "../contexts/ShoppingCartContext";
     
     const removeItem = (id) =>{
       setCart(cart.filter((item) => item.id !== id))
-      console.log(id)
     }
 
       
@@ -50,11 +49,9 @@ import { CartContext } from "../contexts/ShoppingCartContext";
               </div>
           );
         })}
-        {totalCarrito > 0 ? <div><div className="cart"><h2>Total</h2><h2>${totalCarrito}</h2></div><Link to={`/buy`}><Button colorScheme='blue'>Finalizar compra</Button></Link></div> : 
+        {totalCarrito > 0 ? <div><div className="cart"><h2>Total</h2><h2>${totalCarrito}</h2></div><Link to={`/buy`}><Button mb="20px" colorScheme='blue'>Finalizar compra</Button></Link></div> : 
         <Alert className="vacio" status='error'>
-          <AlertIcon />
-          <AlertTitle>Error!</AlertTitle>
-          <AlertDescription>Su carrito se encuenta vacio.</AlertDescription>
+          <AlertIcon /><AlertDescription>Su carrito se encuenta vacio.</AlertDescription>
         </Alert> } 
         
       </>

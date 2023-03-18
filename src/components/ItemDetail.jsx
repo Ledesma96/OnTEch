@@ -7,7 +7,6 @@ import Loading from "./Loading"
 ;
 
 const ItemDetail = ({productos}) => {
- console.log(productos)
   const [produuct, setProduuct] = useState([]);
   const [spinner, setSpinner] = useState(true)
   const { id } = useParams();
@@ -37,7 +36,6 @@ const ItemDetail = ({productos}) => {
 
 
   const idFilter = productos.filter((prod) => prod.id == id);
-  console.log(idFilter)
     return (
       <>
       {idFilter.map((prod)=>(

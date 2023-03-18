@@ -10,13 +10,16 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBn9uvdD5C7yA7zQX18XsVwu4BJnL0BmeI",
-  authDomain: "ontech-cc12b.firebaseapp.com",
-  projectId: "ontech-cc12b",
-  storageBucket: "ontech-cc12b.appspot.com",
-  messagingSenderId: "520541890187",
-  appId: "1:520541890187:web:9a520b135cf07722c6568e"
+  apiKey: "AIzaSyBi2ioICfmcrnIcNn2q3H2-XJSTgCpevcc",
+  authDomain: "ontech-be322.firebaseapp.com",
+  projectId: "ontech-be322",
+  storageBucket: "ontech-be322.appspot.com",
+  messagingSenderId: "460565419211",
+  appId: "1:460565419211:web:dcf383f79bdc6d96c9774e"
 };
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
 
 // Initialize Firebase
 initializeApp(firebaseConfig);

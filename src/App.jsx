@@ -7,6 +7,7 @@ import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
 import Cart from './components/cart'
 import Buy from './components/Buy'
 import Footer from './components/Footer';
+import NotFound from './components/NotFound'
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
           <Route exact path="/cart" element={<Cart/>}/>
           <Route exact path='/buy' element={<Buy/>}/>
+          <Route exact path='/error404!' element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

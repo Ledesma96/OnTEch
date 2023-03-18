@@ -8,7 +8,6 @@ import { Button } from '@chakra-ui/react';
 const ItemCount = ({stock, id, precio, nombre, foto}) => {
     const [contador , setContador] = useState(1);
     const [cart, setCart] = useContext(CartContext);
-    console.log(cart)
 
     const addCart = () =>{
     setCart ((currItem) => {
